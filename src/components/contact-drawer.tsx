@@ -42,25 +42,41 @@ export default function ContactDrawer({ isOpen, prefilledSaree, onClose }: Conta
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setIsSubmitting(true);
 
-    // Save to local storage for demonstration
-    const existing = JSON.parse(localStorage.getItem("devii_inquiries") || "[]");
-    existing.push({
-      ...formData,
-      id: Date.now(),
-      createdAt: new Date().toISOString()
-    });
-    localStorage.setItem("devii_inquiries", JSON.stringify(existing));
+    try {
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+      if (!response.ok) {
+        throw new Error("Failed to deliver inquiry");
+      }
+
+      // Also save to local storage for user redundancy
+      const existing = JSON.parse(localStorage.getItem("devii_inquiries") || "[]");
+      existing.push({
+        ...formData,
+        id: Date.now(),
+        createdAt: new Date().toISOString()
+      });
+      localStorage.setItem("devii_inquiries", JSON.stringify(existing));
+
       setIsSuccess(true);
-    }, 1200);
+    } catch (err) {
+      console.error(err);
+      alert("Loom connection timeout. Please proceed with direct WhatsApp Inquiry!");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetForm = () => {
