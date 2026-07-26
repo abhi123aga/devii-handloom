@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
+@theme {
+  --color-gold-50: #fbf8eb;
+  --color-gold-100: #f5edd0;
+  --color-gold-200: #ead89f;
+  --color-gold-300: #dcbe67;
+  --color-gold-400: #cca03c;
+  --color-gold-500: #b5892c;
+  --color-gold-600: #936820;
+  --color-gold-700: #714a1a;
+  --color-gold-800: #553617;
+  --color-gold-900: #422a16;
+  --color-gold-950: #24140a;
+
+  --color-obsidian-50: #f4f4f6;
+  --color-obsidian-100: #e9e9ed;
+  --color-obsidian-200: #cfcfda;
+  --color-obsidian-300: #a9a9be;
+  --color-obsidian-400: #7c7c9a;
+  --color-obsidian-500: #5b5b7a;
+  --color-obsidian-600: #45455f;
+  --color-obsidian-700: #353549;
+  --color-obsidian-800: #22222b;
+  --color-obsidian-900: #121217;
+  --color-obsidian-950: #07070a;
+  
+  --color-emerald-accent: #047857;
+  --color-crimson-accent: #b91c1c;
+
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #07070a;
+  --foreground: #f4f4f5;
 }
 
 body {
-  background: var(--background);
+  background-color: #07070a;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(181, 137, 44, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 100% 30%, rgba(4, 120, 87, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 0% 70%, rgba(185, 28, 28, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07070a;
+}
+::-webkit-scrollbar-thumb {
+  background: #22222b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b5892c;
+}
+
+/* Premium Animations */
+@keyframes sheen {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.sheen-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 20%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: none;
+}
+
+.sheen-container:hover::after {
+  animation: sheen 1.5s infinite;
+}
+
+/* Hide scrollbar on modal overlay when drawer is open */
+.no-scroll {
+  overflow: hidden;
 }
