@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { Menu, X, Mail, Phone } from "lucide-react";
 import { Instagram } from "@/components/icons";
+import { SignInButton, UserButton, useAuth } from "@clerk/nextjs";
+import Link from "next/link";
 
 interface NavbarProps {
   onOpenContact: () => void;
@@ -11,6 +13,7 @@ interface NavbarProps {
 
 export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { isSignedIn } = useAuth();
 
   const handleNavClick = (id: string) => {
     setIsOpen(false);
@@ -22,7 +25,10 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => handleNavClick("hero")}>
+          <div
+            className="flex-shrink-0 flex items-center cursor-pointer"
+            onClick={() => handleNavClick("hero")}
+          >
             <span className="font-serif text-3xl tracking-[0.2em] text-gold-400 font-medium hover:text-gold-300 transition-colors">
               DEVII
             </span>
@@ -50,8 +56,25 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
             </button>
           </div>
 
-          {/* Contact Button */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Contact Button & Auth */}
+          <div className="hidden md:flex items-center space-x-6">
+            {isSignedIn ? (
+              <>
+                <Link
+                  href="/dashboard"
+                  className="text-xs uppercase tracking-widest text-zinc-400 hover:text-gold-400 font-medium transition-colors"
+                >
+                  Loom Vault
+                </Link>
+                <UserButton />
+              </>
+            ) : (
+              <SignInButton mode="modal">
+                <button className="text-xs uppercase tracking-widest text-zinc-400 hover:text-gold-400 font-medium transition-colors">
+                  Sign In
+                </button>
+              </SignInButton>
+            )}
             <button
               onClick={onOpenContact}
               className="px-6 py-2.5 bg-gradient-to-r from-gold-700 to-gold-500 hover:from-gold-600 hover:to-gold-400 text-obsidian-950 font-serif font-bold text-sm tracking-wider uppercase rounded-sm transition-all duration-300 shadow-[0_4px_20px_rgba(212,175,55,0.15)] hover:shadow-[0_4px_25px_rgba(212,175,55,0.3)] hover:-translate-y-0.5 active:translate-y-0"
@@ -96,15 +119,50 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
               Artisanal Feed
             </button>
 
+            {isSignedIn ? (
+              <>
+                <Link
+                  href="/dashboard"
+                  onClick={() => setIsOpen(false)}
+                  className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors"
+                >
+                  My Loom Vault
+                </Link>
+                <div className="flex items-center justify-between py-2 border-b border-zinc-900">
+                  <span className="text-xs text-zinc-500 uppercase tracking-wider">
+                    Account Settings
+                  </span>
+                  <UserButton />
+                </div>
+              </>
+            ) : (
+              <SignInButton mode="modal">
+                <button className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors">
+                  Sign In / Register
+                </button>
+              </SignInButton>
+            )}
+
             {/* Quick Contacts */}
             <div className="flex items-center justify-around py-4 border-b border-zinc-900">
-              <a href="mailto:contact@deviihandloom.in" className="text-zinc-400 hover:text-gold-400 transition-colors">
+              <a
+                href="mailto:contact@deviihandloom.in"
+                className="text-zinc-400 hover:text-gold-400 transition-colors"
+              >
                 <Mail className="h-5 w-5" />
               </a>
-              <a href="tel:+919380735763" className="text-zinc-400 hover:text-gold-400 transition-colors">
+              <a
+                href="tel:+919380735763"
+                className="text-zinc-400 hover:text-gold-400 transition-colors"
+              >
                 <Phone className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/devii.handloom" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-gold-400 transition-colors">
+              <a
+                href="https://www.instagram.com/devii.handloom"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-gold-400 transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
             </div>

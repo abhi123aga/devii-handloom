@@ -2,17 +2,39 @@
 
 import React from "react";
 import Image from "next/image";
-import { MapPin, Sparkles } from "lucide-react";
+import { MapPin, Sparkles, Heart } from "lucide-react";
 import { Saree } from "@/data/sarees";
+import { useAuth, useClerk } from "@clerk/nextjs";
 
 interface ProductCardProps {
   saree: Saree;
   onSelect: (saree: Saree) => void;
+  isWishlisted?: boolean;
+  onToggleWishlist?: (sareeId: string) => void;
 }
 
-export default function ProductCard({ saree, onSelect }: ProductCardProps) {
+export default function ProductCard({
+  saree,
+  onSelect,
+  isWishlisted = false,
+  onToggleWishlist,
+}: ProductCardProps) {
+  const { isSignedIn } = useAuth();
+  const { openSignIn } = useClerk();
+
+  const handleWishlistClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!isSignedIn) {
+      openSignIn();
+      return;
+    }
+    if (onToggleWishlist) {
+      onToggleWishlist(saree.id);
+    }
+  };
+
   return (
-    <div 
+    <div
       className="group relative bg-obsidian-900 border border-gold-950/40 rounded-sm overflow-hidden flex flex-col justify-between transition-all duration-500 hover:border-gold-600/30 hover:shadow-[0_8px_30px_rgba(181,137,44,0.05)] cursor-pointer"
       onClick={() => onSelect(saree)}
     >
@@ -67,16 +89,29 @@ export default function ProductCard({ saree, onSelect }: ProductCardProps) {
           <span className="font-serif text-xl font-bold text-gold-400">{saree.price}</span>
         </div>
 
-        <button 
-          onClick={(e) => {
-            e.stopPropagation();
-            onSelect(saree);
-          }}
-          className="mt-4 px-4 py-2 border border-gold-900/40 text-gold-400 hover:bg-gold-500 hover:text-obsidian-950 hover:border-gold-500 text-[10px] tracking-widest uppercase font-bold transition-all duration-300 rounded-sm flex items-center gap-1.5"
-        >
-          <Sparkles className="h-3.5 w-3.5" />
-          View Craft
-        </button>
+        <div className="flex items-center gap-3 mt-4">
+          <button
+            onClick={handleWishlistClick}
+            className="px-3 py-2 border border-gold-900/40 text-gold-400 hover:bg-gold-950 rounded-sm transition-all duration-300 flex items-center justify-center cursor-pointer"
+            title={isWishlisted ? "Remove from Loom Vault" : "Save to Loom Vault"}
+          >
+            <Heart
+              className={`h-4 w-4 transition-colors duration-300 ${
+                isWishlisted ? "fill-gold-500 text-gold-500" : "text-zinc-400 hover:text-gold-400"
+              }`}
+            />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onSelect(saree);
+            }}
+            className="px-4 py-2 border border-gold-900/40 text-gold-400 hover:bg-gold-500 hover:text-obsidian-950 hover:border-gold-500 text-[10px] tracking-widest uppercase font-bold transition-all duration-300 rounded-sm flex items-center gap-1.5 cursor-pointer"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            View Craft
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { db } from "./index";
-import { sarees, sareeDetails, inquiries } from "./schema";
-import { eq } from "drizzle-orm";
+import { sarees, sareeDetails, inquiries, wishlists } from "./schema";
+import { eq, and, desc } from "drizzle-orm";
 
 // Fetch all sarees with their respective bullet specifications
 export async function getSarees() {
@@ -33,6 +33,7 @@ export async function saveInquiry(inquiryData: {
   sareeName?: string;
   message: string;
   channel: string;
+  userId?: string;
 }) {
   try {
     const id = `inquiry-${Date.now()}`;
@@ -44,10 +45,68 @@ export async function saveInquiry(inquiryData: {
       sareeName: inquiryData.sareeName || null,
       message: inquiryData.message,
       channel: inquiryData.channel,
+      userId: inquiryData.userId || null,
     });
     return id;
   } catch (error) {
     console.error("Error saving inquiry to DB:", error);
     throw error;
+  }
+}
+
+// Fetch all wishlist items for a given user
+export async function getWishlist(userId: string) {
+  try {
+    const list = await db
+      .select()
+      .from(wishlists)
+      .where(eq(wishlists.userId, userId));
+    return list.map((w) => w.sareeId);
+  } catch (error) {
+    console.error("Error getting wishlist:", error);
+    return [];
+  }
+}
+
+// Add/Remove a saree from wishlist
+export async function toggleWishlist(userId: string, sareeId: string) {
+  try {
+    const existing = await db
+      .select()
+      .from(wishlists)
+      .where(and(eq(wishlists.userId, userId), eq(wishlists.sareeId, sareeId)))
+      .limit(1);
+
+    if (existing.length > 0) {
+      await db
+        .delete(wishlists)
+        .where(and(eq(wishlists.userId, userId), eq(wishlists.sareeId, sareeId)));
+      return { wishlisted: false };
+    } else {
+      const id = `wishlist-${Date.now()}`;
+      await db.insert(wishlists).values({
+        id,
+        userId,
+        sareeId,
+      });
+      return { wishlisted: true };
+    }
+  } catch (error) {
+    console.error("Error toggling wishlist:", error);
+    throw error;
+  }
+}
+
+// Retrieve past inquiries submitted by user
+export async function getUserInquiries(userId: string) {
+  try {
+    return await db
+      .select()
+      .from(inquiries)
+      .where(eq(inquiries.userId, userId))
+      .orderBy(desc(inquiries.createdAt));
+  } catch (error) {
+    console.error("Error getting user inquiries:", error);
+    return [];
   }
 }

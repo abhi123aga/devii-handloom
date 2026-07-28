@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-
+import { auth } from "@clerk/nextjs/server";
 import { saveInquiry } from "@/db/queries";
 
 // Initialize Resend
@@ -14,6 +14,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
+    const { userId } = await auth();
+
     // Save submission to database
     await saveInquiry({
       name,
@@ -22,6 +24,7 @@ export async function POST(request: Request) {
       sareeName: saree,
       message,
       channel,
+      userId: userId || undefined,
     });
 
     const destinationEmail = process.env.NOTIFICATION_EMAIL || "contact@deviihandloom.in";
@@ -40,6 +43,7 @@ export async function POST(request: Request) {
     const data = await resend.emails.send({
       from: "Devii Handlooms <contact@deviihandloom.in>",
       to: [destinationEmail],
+      replyTo: email,
       subject: `[Devii Saree Inquiry] From ${name}`,
       html: `
         <div style="font-family: sans-serif; padding: 24px; color: #1f2937; max-width: 600px; border: 1px solid #e5e7eb; border-radius: 6px;">

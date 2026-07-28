@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -30,13 +31,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${cormorantGaramond.variable} ${inter.variable} h-full antialiased dark`}
-    >
-      <body className="min-h-full flex flex-col bg-obsidian-950 text-zinc-100 font-sans selection:bg-gold-700 selection:text-gold-50">
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html
+        lang="en"
+        className={`${cormorantGaramond.variable} ${inter.variable} h-full antialiased dark`}
+      >
+        <body className="min-h-full flex flex-col bg-obsidian-950 text-zinc-100 font-sans selection:bg-gold-700 selection:text-gold-50">
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

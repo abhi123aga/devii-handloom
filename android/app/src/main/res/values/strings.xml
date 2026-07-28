@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Devii Handlooms</string>
+    <string name="title_activity_main">Devii Handlooms</string>
+    <string name="package_name">in.deviihandloom</string>
+    <string name="custom_url_scheme">in.deviihandloom</string>
+</resources>

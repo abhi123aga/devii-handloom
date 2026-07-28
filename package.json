@@ -9,9 +9,14 @@
     "lint": "eslint",
     "db:push": "drizzle-kit push",
     "db:generate": "drizzle-kit generate",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "app:sync": "npx cap sync",
+    "app:open": "npx cap open android"
   },
   "dependencies": {
+    "@capacitor/android": "^8.4.2",
+    "@capacitor/core": "^8.4.2",
+    "@clerk/nextjs": "^7.6.2",
     "@libsql/client": "^0.17.4",
     "drizzle-orm": "^0.45.2",
     "framer-motion": "^12.42.2",
@@ -22,6 +27,7 @@
     "resend": "^6.18.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.4.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
