@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+import { saveInquiry } from "@/db/queries";
+
 // Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY || "re_dummy_key");
 
@@ -11,6 +13,16 @@ export async function POST(request: Request) {
     if (!name || !email || !message) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
+
+    // Save submission to database
+    await saveInquiry({
+      name,
+      email,
+      phone,
+      sareeName: saree,
+      message,
+      channel,
+    });
 
     const destinationEmail = process.env.NOTIFICATION_EMAIL || "info@devii.com";
     

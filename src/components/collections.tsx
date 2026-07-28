@@ -1,22 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
-import { SAREE_COLLECTION, Saree } from "@/data/sarees";
+import { Saree } from "@/data/sarees";
 import ProductCard from "./product-card";
 import { Layers } from "lucide-react";
 
 interface CollectionsProps {
+  sarees: Saree[];
   onSelectSaree: (saree: Saree) => void;
 }
 
-export default function Collections({ onSelectSaree }: CollectionsProps) {
+export default function Collections({ sarees, onSelectSaree }: CollectionsProps) {
   const [filter, setFilter] = useState<string>("All");
 
   const categories = ["All", "Traditional Handloom", "Heritage Cotton-Silk", "Artisanal block Print", "Khadi & Handspun"];
 
   const filteredSarees = filter === "All" 
-    ? SAREE_COLLECTION 
-    : SAREE_COLLECTION.filter(s => s.category === filter);
+    ? sarees 
+    : sarees.filter(s => s.category === filter);
 
   return (
     <section id="collections" className="py-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 border-t border-gold-950/20">

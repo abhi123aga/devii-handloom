@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import Collections from "@/components/collections";
@@ -12,9 +12,25 @@ import ContactDrawer from "@/components/contact-drawer";
 import { Saree } from "@/data/sarees";
 
 export default function Home() {
+  const [sarees, setSarees] = useState<Saree[]>([]);
   const [selectedSaree, setSelectedSaree] = useState<Saree | null>(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [prefilledSareeName, setPrefilledSareeName] = useState("");
+
+  useEffect(() => {
+    const fetchSarees = async () => {
+      try {
+        const response = await fetch("/api/sarees");
+        if (response.ok) {
+          const data = await response.json();
+          setSarees(data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch sarees:", error);
+      }
+    };
+    fetchSarees();
+  }, []);
 
   const handleScrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -52,6 +68,7 @@ export default function Home() {
           onOpenContact={handleOpenContact}
         />
         <Collections 
+          sarees={sarees}
           onSelectSaree={handleSelectSaree} 
         />
         <OurStory />
