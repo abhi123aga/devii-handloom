@@ -38,19 +38,19 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
           <div className="hidden md:flex items-center space-x-12">
             <button
               onClick={() => handleNavClick("collections")}
-              className="text-zinc-400 hover:text-gold-400 font-medium tracking-widest text-xs uppercase transition-colors"
+              className="text-zinc-400 hover:text-gold-400 font-medium tracking-widest text-xs uppercase transition-colors cursor-pointer"
             >
               Collections
             </button>
             <button
               onClick={() => handleNavClick("story")}
-              className="text-zinc-400 hover:text-gold-400 font-medium tracking-widest text-xs uppercase transition-colors"
+              className="text-zinc-400 hover:text-gold-400 font-medium tracking-widest text-xs uppercase transition-colors cursor-pointer"
             >
               Our Story
             </button>
             <button
               onClick={() => handleNavClick("instagram")}
-              className="text-zinc-400 hover:text-gold-400 font-medium tracking-widest text-xs uppercase transition-colors"
+              className="text-zinc-400 hover:text-gold-400 font-medium tracking-widest text-xs uppercase transition-colors cursor-pointer"
             >
               Artisanal Feed
             </button>
@@ -62,7 +62,7 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
               <>
                 <Link
                   href="/dashboard"
-                  className="text-xs uppercase tracking-widest text-zinc-400 hover:text-gold-400 font-medium transition-colors"
+                  className="text-xs uppercase tracking-widest text-zinc-400 hover:text-gold-400 font-medium transition-colors cursor-pointer"
                 >
                   Loom Vault
                 </Link>
@@ -70,14 +70,14 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
               </>
             ) : (
               <SignInButton mode="modal">
-                <button className="text-xs uppercase tracking-widest text-zinc-400 hover:text-gold-400 font-medium transition-colors">
+                <button className="text-xs uppercase tracking-widest text-zinc-400 hover:text-gold-400 font-medium transition-colors cursor-pointer">
                   Sign In
                 </button>
               </SignInButton>
             )}
             <button
               onClick={onOpenContact}
-              className="px-6 py-2.5 bg-gradient-to-r from-gold-700 to-gold-500 hover:from-gold-600 hover:to-gold-400 text-obsidian-950 font-serif font-bold text-sm tracking-wider uppercase rounded-sm transition-all duration-300 shadow-[0_4px_20px_rgba(212,175,55,0.15)] hover:shadow-[0_4px_25px_rgba(212,175,55,0.3)] hover:-translate-y-0.5 active:translate-y-0"
+              className="px-6 py-2.5 bg-gradient-to-r from-gold-700 to-gold-500 hover:from-gold-600 hover:to-gold-400 text-obsidian-950 font-serif font-bold text-sm tracking-wider uppercase rounded-sm transition-all duration-300 shadow-[0_4px_20px_rgba(212,175,55,0.15)] hover:shadow-[0_4px_25px_rgba(212,175,55,0.3)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
             >
               Inquire Now
             </button>
@@ -102,19 +102,19 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
           <div className="px-6 pt-4 pb-8 space-y-6 flex flex-col">
             <button
               onClick={() => handleNavClick("collections")}
-              className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors"
+              className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors cursor-pointer"
             >
               Collections
             </button>
             <button
               onClick={() => handleNavClick("story")}
-              className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors"
+              className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors cursor-pointer"
             >
               Our Story
             </button>
             <button
               onClick={() => handleNavClick("instagram")}
-              className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors"
+              className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors cursor-pointer"
             >
               Artisanal Feed
             </button>
@@ -124,7 +124,7 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
                 <Link
                   href="/dashboard"
                   onClick={() => setIsOpen(false)}
-                  className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors"
+                  className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors cursor-pointer"
                 >
                   My Loom Vault
                 </Link>
@@ -137,7 +137,7 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
               </>
             ) : (
               <SignInButton mode="modal">
-                <button className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors">
+                <button className="text-left text-zinc-300 hover:text-gold-400 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-900 transition-colors cursor-pointer">
                   Sign In / Register
                 </button>
               </SignInButton>
@@ -172,7 +172,7 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
                 setIsOpen(false);
                 onOpenContact();
               }}
-              className="w-full py-3.5 bg-gradient-to-r from-gold-700 to-gold-500 text-obsidian-950 font-serif font-bold tracking-wider uppercase text-center rounded-sm transition-all"
+              className="w-full py-3.5 bg-gradient-to-r from-gold-700 to-gold-500 text-obsidian-950 font-serif font-bold tracking-wider uppercase text-center rounded-sm transition-all cursor-pointer"
             >
               Inquire Now
             </button>

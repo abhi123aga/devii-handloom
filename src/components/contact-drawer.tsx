@@ -208,11 +208,15 @@ export default function ContactDrawer({ isOpen, prefilledSaree, onClose }: Conta
                   <input 
                     type="tel"
                     value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    onChange={(e) => {
+                      const sanitized = e.target.value.replace(/[^0-9+\s\-()]/g, "");
+                      setFormData({...formData, phone: sanitized});
+                    }}
                     placeholder="+91 XXXXX XXXXX"
                     className="w-full bg-obsidian-950 border border-gold-950/40 rounded-sm px-4 py-3 text-sm text-zinc-200 placeholder-zinc-700 focus:outline-none focus:border-gold-500 transition-colors"
                   />
                 </div>
+
               </div>
 
               {/* Saree Selection */}
