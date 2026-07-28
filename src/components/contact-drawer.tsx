@@ -93,7 +93,7 @@ export default function ContactDrawer({ isOpen, prefilledSaree, onClose }: Conta
   };
 
   // WhatsApp click path for submitted details
-  const whatsappNumber = "919876543210";
+  const whatsappNumber = "919380735763";
   const getWhatsAppSubmitUrl = () => {
     const text = `Hi Devii! My name is ${formData.name}. I just submitted an inquiry for "${formData.saree || "General Collection"}" via your website. \n\nMessage: ${formData.message}\nEmail: ${formData.email}\nPhone: ${formData.phone || "N/A"}\nPreferred Contact Channel: ${formData.channel}`;
     return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;

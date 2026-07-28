@@ -29,21 +29,21 @@ export default function Footer({ onScrollToSection, onOpenContact }: FooterProps
             </p>
             <div className="flex items-center space-x-6">
               <a 
-                href="mailto:info@devii.com" 
+                href="mailto:contact@deviihandloom.in" 
                 className="p-2.5 bg-obsidian-900 border border-gold-950/30 hover:border-gold-500/40 text-zinc-400 hover:text-gold-400 rounded-full transition-all"
                 aria-label="Email Us"
               >
                 <Mail className="h-4 w-4" />
               </a>
               <a 
-                href="tel:+919876543210" 
+                href="tel:+919380735763" 
                 className="p-2.5 bg-obsidian-900 border border-gold-950/30 hover:border-gold-500/40 text-zinc-400 hover:text-gold-400 rounded-full transition-all"
                 aria-label="Call Us"
               >
                 <Phone className="h-4 w-4" />
               </a>
               <a 
-                href="https://instagram.com/devii.handlooms" 
+                href="https://www.instagram.com/devii.handloom" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2.5 bg-obsidian-900 border border-gold-950/30 hover:border-gold-500/40 text-zinc-400 hover:text-gold-400 rounded-full transition-all"

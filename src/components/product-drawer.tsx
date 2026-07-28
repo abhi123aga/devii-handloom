@@ -26,7 +26,7 @@ export default function ProductDrawer({ saree, onClose, onOpenContactWithSaree }
   if (!saree) return null;
 
   // Prefilled WhatsApp link
-  const whatsappNumber = "919876543210"; // Sample WhatsApp number
+  const whatsappNumber = "919380735763";
   const whatsappMessage = encodeURIComponent(
     `Hi Devii Handlooms! I am interested in inquiring about the "${saree.name}" saree (${saree.price}). Please share availability and dispatch details.`
   );
@@ -165,7 +165,7 @@ export default function ProductDrawer({ saree, onClose, onOpenContactWithSaree }
           {/* Instagram Action */}
           <div className="flex justify-center pt-2">
             <a 
-              href="https://instagram.com/devii.handlooms" 
+              href="https://www.instagram.com/devii.handloom" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-zinc-400 hover:text-gold-400 text-xs uppercase tracking-wider transition-colors"

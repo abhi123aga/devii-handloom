@@ -98,13 +98,13 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
 
             {/* Quick Contacts */}
             <div className="flex items-center justify-around py-4 border-b border-zinc-900">
-              <a href="mailto:info@devii.com" className="text-zinc-400 hover:text-gold-400 transition-colors">
+              <a href="mailto:contact@deviihandloom.in" className="text-zinc-400 hover:text-gold-400 transition-colors">
                 <Mail className="h-5 w-5" />
               </a>
-              <a href="tel:+919876543210" className="text-zinc-400 hover:text-gold-400 transition-colors">
+              <a href="tel:+919380735763" className="text-zinc-400 hover:text-gold-400 transition-colors">
                 <Phone className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com/devii.handlooms" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-gold-400 transition-colors">
+              <a href="https://www.instagram.com/devii.handloom" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-gold-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>

@@ -53,18 +53,18 @@ export default function InstagramFeed() {
           </h2>
           <div className="h-0.5 w-16 bg-gold-600/40 mt-4 mb-2" />
           <p className="text-zinc-500 font-light text-sm max-w-xl">
-            We list and sell catalog drop releases live on our social feed. Follow <a href="https://instagram.com/devii.handlooms" target="_blank" rel="noopener noreferrer" className="text-gold-400 hover:text-gold-300 font-medium transition-colors">@devii.handlooms</a> to catch fresh loom dispatches first.
+            We list and sell catalog drop releases live on our social feed. Follow <a href="https://www.instagram.com/devii.handloom" target="_blank" rel="noopener noreferrer" className="text-gold-400 hover:text-gold-300 font-medium transition-colors">@devii.handloom</a> to catch fresh loom dispatches first.
           </p>
         </div>
 
         <a 
-          href="https://instagram.com/devii.handlooms"
+          href="https://www.instagram.com/devii.handloom"
           target="_blank"
           rel="noopener noreferrer"
           className="self-start md:self-auto px-6 py-3 border border-gold-500 hover:bg-gold-500 text-gold-300 hover:text-obsidian-950 font-serif text-xs tracking-widest uppercase transition-all duration-300 rounded-sm flex items-center gap-2"
         >
           <Instagram className="h-4 w-4" />
-          Follow @devii.handlooms
+          Follow @devii.handloom
         </a>
       </div>
 
@@ -73,7 +73,7 @@ export default function InstagramFeed() {
         {feedPosts.map((post) => (
           <a 
             key={post.id}
-            href="https://instagram.com/devii.handlooms"
+            href="https://www.instagram.com/devii.handloom"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative aspect-square w-full rounded-sm overflow-hidden border border-gold-950/40 bg-obsidian-900"
