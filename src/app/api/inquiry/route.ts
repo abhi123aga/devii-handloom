@@ -24,7 +24,7 @@ export async function POST(request: Request) {
       channel,
     });
 
-    const destinationEmail = process.env.NOTIFICATION_EMAIL || "info@devii.com";
+    const destinationEmail = process.env.NOTIFICATION_EMAIL || "contact@deviihandloom.in";
     
     // Simulate email in development/local testing if key is absent
     if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === "re_dummy_key") {
@@ -36,9 +36,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true, mock: true });
     }
 
-    // Dispatch via Resend (onboarding@resend.dev sends to owner's registered Resend email in sandbox mode)
+    // Dispatch via Resend (using your verified custom domain)
     const data = await resend.emails.send({
-      from: "Devii Handlooms <onboarding@resend.dev>",
+      from: "Devii Handlooms <contact@deviihandloom.in>",
       to: [destinationEmail],
       subject: `[Devii Saree Inquiry] From ${name}`,
       html: `
