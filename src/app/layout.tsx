@@ -34,8 +34,21 @@ export default function RootLayout({
     <ClerkProvider>
       <html
         lang="en"
-        className={`${cormorantGaramond.variable} ${inter.variable} h-full antialiased dark`}
+        className={`${cormorantGaramond.variable} ${inter.variable} h-full antialiased`}
+        suppressHydrationWarning
       >
+        <head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  const theme = localStorage.getItem('theme') || 'dark';
+                  document.documentElement.classList.add(theme);
+                })();
+              `,
+            }}
+          />
+        </head>
         <body className="min-h-full flex flex-col bg-obsidian-950 text-zinc-100 font-sans selection:bg-gold-700 selection:text-gold-50">
           {children}
         </body>

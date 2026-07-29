@@ -5,6 +5,7 @@ import { Menu, X, Mail, Phone } from "lucide-react";
 import { Instagram } from "@/components/icons";
 import { SignInButton, UserButton, useAuth } from "@clerk/nextjs";
 import Link from "next/link";
+import ThemeToggle from "@/components/theme-toggle";
 
 interface NavbarProps {
   onOpenContact: () => void;
@@ -58,6 +59,7 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
 
           {/* Contact Button & Auth */}
           <div className="hidden md:flex items-center space-x-6">
+            <ThemeToggle />
             {isSignedIn ? (
               <>
                 <Link
@@ -84,7 +86,8 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-zinc-400 hover:text-gold-400 focus:outline-none transition-colors"

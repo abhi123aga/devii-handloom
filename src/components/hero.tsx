@@ -13,7 +13,7 @@ export default function Hero({ onScrollToCollections, onOpenContact }: HeroProps
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image Container with Ambient Zoom */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-[#07070a]">
         <Image
           src="/images/hero_saree.jpg"
           alt="Royal Indian Handloom Cotton Saree"
@@ -25,9 +25,9 @@ export default function Hero({ onScrollToCollections, onOpenContact }: HeroProps
             animationDuration: "25s",
           }}
         />
-        {/* Obsidian Overlay Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-obsidian-950/80 via-transparent to-obsidian-950/80" />
+        {/* Hardcoded Obsidian Overlay Gradients (Always Dark) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-[#07070a]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07070a]/80 via-transparent to-[#07070a]/80" />
       </div>
 
       {/* Hero Content */}
@@ -39,27 +39,27 @@ export default function Hero({ onScrollToCollections, onOpenContact }: HeroProps
           </span>
         </div>
 
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-zinc-100 tracking-wide leading-none mb-6 animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-200">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-[#f4f4f5] tracking-wide leading-none mb-6 animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-200">
           Handwoven Legacies of <br />
           <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-100 to-gold-400">
             Cotton & Thread
           </span>
         </h1>
 
-        <p className="max-w-2xl mx-auto text-zinc-400 text-base md:text-lg tracking-wide leading-relaxed font-light mb-12 animate-in fade-in slide-in-from-bottom-7 duration-1000 delay-300">
+        <p className="max-w-2xl mx-auto text-[#a1a1aa] text-base md:text-lg tracking-wide leading-relaxed font-light mb-12 animate-in fade-in slide-in-from-bottom-7 duration-1000 delay-300">
           Devii brings you hand-spun cotton and artisanal weaves sourced directly from India's ancestral loom rooms. Authenticity woven into every warp and weft, curated for the modern connoisseur of heritage fabrics.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
           <button
             onClick={onScrollToCollections}
-            className="w-full sm:w-auto px-8 py-4 bg-transparent border border-gold-500 hover:bg-gold-500/10 text-gold-300 hover:text-gold-200 font-serif text-sm tracking-wider uppercase rounded-sm transition-all duration-300"
+            className="w-full sm:w-auto px-8 py-4 bg-transparent border border-gold-500 hover:bg-gold-500/10 text-gold-300 hover:text-gold-200 font-serif text-sm tracking-wider uppercase rounded-sm transition-all duration-300 cursor-pointer"
           >
             Explore Stock
           </button>
           <button
             onClick={onOpenContact}
-            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold-600 to-gold-400 text-obsidian-950 hover:from-gold-500 hover:to-gold-300 font-serif font-bold text-sm tracking-wider uppercase rounded-sm transition-all duration-300 shadow-[0_4px_20px_rgba(212,175,55,0.2)]"
+            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold-600 to-gold-400 text-[#07070a] hover:from-gold-500 hover:to-gold-300 font-serif font-bold text-sm tracking-wider uppercase rounded-sm transition-all duration-300 shadow-[0_4px_20px_rgba(212,175,55,0.2)] cursor-pointer"
           >
             Direct Inquiry
           </button>

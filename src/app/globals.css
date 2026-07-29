@@ -13,7 +13,15 @@
   --color-gold-900: #422a16;
   --color-gold-950: #24140a;
 
-  /* Obsidian represents a high-end luxury light warm cream/ivory scale */
+  --color-emerald-accent: #047857;
+  --color-crimson-accent: #b91c1c;
+
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+}
+
+:root {
+  /* Obsidian represents a high-end luxury light warm cream/ivory scale in light mode */
   --color-obsidian-50: #0a0a0f;
   --color-obsidian-100: #12121c;
   --color-obsidian-200: #252535;
@@ -26,7 +34,7 @@
   --color-obsidian-900: #f7f1e5; /* card / section background */
   --color-obsidian-950: #fbf8f2; /* main background */
   
-  /* Zinc represents the text readability hierarchy (dark charcoal/slate) */
+  /* Zinc represents the text readability hierarchy (dark charcoal/slate) in light mode */
   --color-zinc-50: #09090b;
   --color-zinc-100: #18181b; /* Headings (almost black) */
   --color-zinc-200: #27272a; /* Subheadings */
@@ -38,17 +46,41 @@
   --color-zinc-800: #f4f4f5;
   --color-zinc-900: #fafafa;
   --color-zinc-950: #ffffff;
-  
-  --color-emerald-accent: #047857;
-  --color-crimson-accent: #b91c1c;
 
-  --font-serif: var(--font-serif), Georgia, serif;
-  --font-sans: var(--font-sans), system-ui, sans-serif;
-}
-
-:root {
   --background: #fbf8f2;
   --foreground: #18181b;
+}
+
+/* If the root html element has the class "dark" */
+.dark {
+  /* Obsidian represents the original rich dark theme scale */
+  --color-obsidian-50: #f4f4f6;
+  --color-obsidian-100: #e9e9ed;
+  --color-obsidian-200: #cfcfda;
+  --color-obsidian-300: #a9a9be;
+  --color-obsidian-400: #7c7c9a;
+  --color-obsidian-500: #5b5b7a;
+  --color-obsidian-600: #45455f;
+  --color-obsidian-700: #353549;
+  --color-obsidian-800: #22222b;
+  --color-obsidian-900: #121217;
+  --color-obsidian-950: #07070a;
+  
+  /* Zinc represents the light readable text hierarchy in dark mode */
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5; /* headings (light grey) */
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8; /* body text (light grey) */
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #27272a;
+  --color-zinc-800: #18181b;
+  --color-zinc-900: #09090b;
+  --color-zinc-950: #050507;
+
+  --background: #07070a;
+  --foreground: #f4f4f5;
 }
 
 body {
