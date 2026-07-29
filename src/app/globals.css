@@ -13,17 +13,31 @@
   --color-gold-900: #422a16;
   --color-gold-950: #24140a;
 
-  --color-obsidian-50: #f4f4f6;
-  --color-obsidian-100: #e9e9ed;
-  --color-obsidian-200: #cfcfda;
-  --color-obsidian-300: #a9a9be;
-  --color-obsidian-400: #7c7c9a;
-  --color-obsidian-500: #5b5b7a;
-  --color-obsidian-600: #45455f;
-  --color-obsidian-700: #353549;
-  --color-obsidian-800: #22222b;
-  --color-obsidian-900: #121217;
-  --color-obsidian-950: #07070a;
+  /* Obsidian represents a high-end luxury light warm cream/ivory scale */
+  --color-obsidian-50: #0a0a0f;
+  --color-obsidian-100: #12121c;
+  --color-obsidian-200: #252535;
+  --color-obsidian-300: #3f3f54;
+  --color-obsidian-400: #575775;
+  --color-obsidian-500: #727294;
+  --color-obsidian-600: #dfd7cc; /* borders */
+  --color-obsidian-700: #ebdcc5; /* secondary borders */
+  --color-obsidian-800: #f4ebd9; /* elements */
+  --color-obsidian-900: #f7f1e5; /* card / section background */
+  --color-obsidian-950: #fbf8f2; /* main background */
+  
+  /* Zinc represents the text readability hierarchy (dark charcoal/slate) */
+  --color-zinc-50: #09090b;
+  --color-zinc-100: #18181b; /* Headings (almost black) */
+  --color-zinc-200: #27272a; /* Subheadings */
+  --color-zinc-300: #3f3f46; /* Body text */
+  --color-zinc-400: #52525b; /* Secondary body */
+  --color-zinc-500: #71717a; /* Muted captions */
+  --color-zinc-600: #a1a1aa; /* Disabled / very muted */
+  --color-zinc-700: #e4e4e7; /* Divider lines */
+  --color-zinc-800: #f4f4f5;
+  --color-zinc-900: #fafafa;
+  --color-zinc-950: #ffffff;
   
   --color-emerald-accent: #047857;
   --color-crimson-accent: #b91c1c;
@@ -33,16 +47,16 @@
 }
 
 :root {
-  --background: #07070a;
-  --foreground: #f4f4f5;
+  --background: #fbf8f2;
+  --foreground: #18181b;
 }
 
 body {
-  background-color: #07070a;
+  background-color: var(--background);
   background-image:
-    radial-gradient(circle at 50% 0%, rgba(181, 137, 44, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 100% 30%, rgba(4, 120, 87, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 0% 70%, rgba(185, 28, 28, 0.03) 0%, transparent 40%);
+    radial-gradient(circle at 50% 0%, rgba(181, 137, 44, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 100% 30%, rgba(4, 120, 87, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 0% 70%, rgba(185, 28, 28, 0.02) 0%, transparent 40%);
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
@@ -53,10 +67,10 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #07070a;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #22222b;
+  background: #dfd7cc;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -86,8 +100,8 @@ body {
   background-image: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.05) 20%,
-    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0.3) 60%,
     rgba(255, 255, 255, 0) 100%
   );
   animation: none;
