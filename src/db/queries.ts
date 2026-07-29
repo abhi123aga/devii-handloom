@@ -110,3 +110,70 @@ export async function getUserInquiries(userId: string) {
     return [];
   }
 }
+
+// Add a new saree with details
+export async function addSaree(sareeData: {
+  id: string;
+  name: string;
+  category: string;
+  material: string;
+  price: string;
+  description: string;
+  image: string;
+  craftName: string;
+  origin: string;
+  inStock?: boolean;
+}, detailsList: string[]) {
+  try {
+    await db.insert(sarees).values({
+      id: sareeData.id,
+      name: sareeData.name,
+      category: sareeData.category,
+      material: sareeData.material,
+      price: sareeData.price,
+      description: sareeData.description,
+      image: sareeData.image,
+      craftName: sareeData.craftName,
+      origin: sareeData.origin,
+      inStock: sareeData.inStock ?? true,
+    });
+
+    if (detailsList && detailsList.length > 0) {
+      const detailsValues = detailsList.map((textVal, index) => ({
+        id: `detail-${Date.now()}-${index}`,
+        sareeId: sareeData.id,
+        detailText: textVal.trim(),
+        sortOrder: index,
+      }));
+      await db.insert(sareeDetails).values(detailsValues);
+    }
+    return sareeData.id;
+  } catch (error) {
+    console.error("Error adding saree to DB:", error);
+    throw error;
+  }
+}
+
+// Delete a saree and its details
+export async function deleteSaree(sareeId: string) {
+  try {
+    await db.delete(sareeDetails).where(eq(sareeDetails.sareeId, sareeId));
+    await db.delete(sarees).where(eq(sarees.id, sareeId));
+    return true;
+  } catch (error) {
+    console.error("Error deleting saree from DB:", error);
+    throw error;
+  }
+}
+
+// Update stock status of a saree
+export async function updateSareeStock(sareeId: string, inStock: boolean) {
+  try {
+    await db.update(sarees).set({ inStock }).where(eq(sarees.id, sareeId));
+    return true;
+  } catch (error) {
+    console.error("Error updating stock status:", error);
+    throw error;
+  }
+}
+
