@@ -11,6 +11,7 @@ import ProductDrawer from "@/components/product-drawer";
 import ContactDrawer from "@/components/contact-drawer";
 import { Saree } from "@/data/sarees";
 import { useAuth } from "@clerk/nextjs";
+import WhatsAppButton from "@/components/whatsapp-button";
 
 export default function Home() {
   const [sarees, setSarees] = useState<Saree[]>([]);
@@ -142,6 +143,9 @@ export default function Home() {
         prefilledSaree={prefilledSareeName}
         onClose={() => setIsContactOpen(false)}
       />
+
+      {/* Floating WhatsApp Quick Connect Widget */}
+      <WhatsAppButton />
     </div>
   );
 }
