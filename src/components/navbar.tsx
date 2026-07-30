@@ -45,7 +45,7 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
 
           {/* Desktop Center: Brand Logo Image (White background merges seamlessly, sized directly to fit container) */}
           <div
-            className="flex-shrink-0 flex items-center justify-center cursor-pointer py-1"
+            className="hidden md:flex flex-shrink-0 items-center justify-center cursor-pointer py-1"
             onClick={() => handleNavClick("hero")}
           >
             <Image
