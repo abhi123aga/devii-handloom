@@ -24,7 +24,7 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#fdf2f4] shadow-sm transition-all duration-300">
-      <div className="w-full px-4 sm:px-6">
+      <div className="w-full px-4 sm:px-6 relative">
         <div className="flex items-center justify-between h-30 md:h-40">
           
           {/* Desktop Left: Navigation Links */}
@@ -58,9 +58,9 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
             />
           </div>
 
-          {/* Mobile Logo Container (Shown on left on mobile, sized directly to fit container) */}
+          {/* Mobile Logo Container (Shown in center absolutely, sized directly to fit container) */}
           <div
-            className="md:hidden flex-shrink-0 flex items-center cursor-pointer"
+            className="md:hidden absolute left-1/2 -translate-x-1/2 flex-shrink-0 flex items-center cursor-pointer"
             onClick={() => handleNavClick("hero")}
           >
             <Image
@@ -101,7 +101,6 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
 
           {/* Mobile right menu controls */}
           <div className="md:hidden flex items-center gap-3">
-            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-zinc-700 hover:text-gold-600 focus:outline-none transition-colors cursor-pointer"
@@ -119,13 +118,13 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
           <div className="px-6 pt-4 pb-8 space-y-6 flex flex-col">
             <button
               onClick={() => handleNavClick("story")}
-              className="text-left text-zinc-800 hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-100 transition-colors cursor-pointer"
+              className="text-left text-zinc-100 hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-100 transition-colors cursor-pointer"
             >
               Our Story
             </button>
             <button
               onClick={() => handleNavClick("instagram")}
-              className="text-left text-zinc-800 hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-100 transition-colors cursor-pointer"
+              className="text-left text-zinc-100 hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-100 transition-colors cursor-pointer"
             >
               Artisanal Feed
             </button>

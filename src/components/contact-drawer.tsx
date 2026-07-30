@@ -100,15 +100,15 @@ export default function ContactDrawer({ isOpen, prefilledSaree, onClose }: Conta
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-4 md:p-8">
       {/* Backdrop (Dark backdrop with blur to make the white modal pop) */}
       <div 
-        className="absolute inset-0 bg-black/75 backdrop-blur-md animate-in fade-in duration-300"
+        className="fixed inset-0 bg-black/75 backdrop-blur-md animate-in fade-in duration-300"
         onClick={onClose}
       />
 
       {/* Center Modal Dialog Panel (Opaque solid white background with a soft gold border) */}
-      <div className="relative w-full max-w-lg mx-4 bg-[#ffffff] border border-gold-500/30 rounded-sm shadow-[0_15px_50px_rgba(0,0,0,0.15)] overflow-hidden z-10 animate-in zoom-in-95 duration-300">
+      <div className="relative w-full max-w-lg bg-[#ffffff] border border-gold-500/30 rounded-sm shadow-[0_15px_50px_rgba(0,0,0,0.15)] z-10 animate-in zoom-in-95 duration-300 my-auto">
         
         {/* Close Button */}
         <button 
