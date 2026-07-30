@@ -3,6 +3,7 @@
 import React from "react";
 import { Mail, Phone, ArrowUp, Send } from "lucide-react";
 import { Instagram } from "@/components/icons";
+import Image from "next/image";
 
 interface FooterProps {
   onScrollToSection: (id: string) => void;
@@ -20,10 +21,16 @@ export default function Footer({ onScrollToSection, onOpenContact }: FooterProps
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-gold-950/20">
           
           {/* Brand Info */}
-          <div className="md:col-span-5 space-y-6">
-            <span className="font-serif text-3xl tracking-[0.2em] text-gold-400 font-medium block">
-              DEVII
-            </span>
+          <div className="md:col-span-10 space-y-6">
+            <div className="cursor-pointer block" onClick={handleScrollTop}>
+              <Image
+                src="/images/logo.png"
+                alt="DEVII"
+                width={140}
+                height={45}
+                className="h-11 w-auto object-contain"
+              />
+            </div>
             <p className="text-zinc-500 text-sm font-light leading-relaxed max-w-sm">
               Devii is a premium boutique dedicated to reviving handspun cotton and heritage loom traditions. We offer limited-stock and bespoke sarees, working directly with weaving families across India.
             </p>
@@ -54,57 +61,7 @@ export default function Footer({ onScrollToSection, onOpenContact }: FooterProps
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="md:col-span-3 space-y-6">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-zinc-400 font-bold">
-              Collections Room
-            </h4>
-            <ul className="space-y-4">
-              {["Traditional Handloom", "Heritage Cotton-Silk", "Artisanal block Print", "Khadi & Handspun"].map((cat) => (
-                <li key={cat}>
-                  <button 
-                    onClick={() => onScrollToSection("collections")}
-                    className="text-zinc-500 hover:text-gold-400 font-light text-sm transition-colors text-left"
-                  >
-                    {cat}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Navigation & Help */}
-          <div className="md:col-span-2 space-y-6">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-zinc-400 font-bold">
-              Navigation
-            </h4>
-            <ul className="space-y-4">
-              <li>
-                <button 
-                  onClick={() => onScrollToSection("collections")}
-                  className="text-zinc-500 hover:text-gold-400 font-light text-sm transition-colors"
-                >
-                  Gallery
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => onScrollToSection("story")}
-                  className="text-zinc-500 hover:text-gold-400 font-light text-sm transition-colors"
-                >
-                  Our Philosophy
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={onOpenContact}
-                  className="text-zinc-500 hover:text-gold-400 font-light text-sm transition-colors"
-                >
-                  Artisan Inquiry
-                </button>
-              </li>
-            </ul>
-          </div>
+          {/* Navigation Column removed */}
 
           {/* Top Button */}
           <div className="md:col-span-2 flex flex-col justify-between items-end md:items-end">

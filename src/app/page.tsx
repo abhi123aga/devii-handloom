@@ -79,7 +79,14 @@ export default function Home() {
   const handleScrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      const headerOffset = window.innerWidth >= 768 ? 160 : 120; // 150% expanded header heights
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 32; // additional padding gap for aesthetic breathing room
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -112,17 +119,17 @@ export default function Home() {
       <Navbar onOpenContact={handleOpenContact} onScrollToSection={handleScrollToSection} />
 
       {/* Main Layout Sections */}
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-30 md:pt-40">
         <Hero
           onScrollToCollections={() => handleScrollToSection("collections")}
           onOpenContact={handleOpenContact}
         />
-        <Collections
+        {/* <Collections
           sarees={sarees}
           onSelectSaree={handleSelectSaree}
           wishlistIds={wishlistIds}
           onToggleWishlist={handleToggleWishlist}
-        />
+        /> */}
         <OurStory />
         <InstagramFeed />
       </main>

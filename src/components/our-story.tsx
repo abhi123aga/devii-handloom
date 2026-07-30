@@ -39,11 +39,37 @@ export default function OurStory() {
           
           <div className="h-0.5 w-16 bg-gold-600/40 mb-6" />
 
-          <p className="text-zinc-400 font-light leading-relaxed text-sm md:text-base">
+          <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed text-sm md:text-base">
+            We have always loved sarees. The drape, the colours, the quiet elegance of six yards that can carry a hundred stories. But growing up in India, we also noticed something we couldn't ignore. India is a hot, humid, tropical country, and yet we would watch women dressed in beautiful silk sarees, visibly uncomfortable, sweating through weddings and festivals, quietly enduring it because that's just what you did.
+          </p>
+
+          <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed text-sm md:text-base">
+            We would see it in our own mothers and aunts. The pallu held a little too tight, the fanning between photographs, the relief on their faces the moment the saree finally came off at the end of the night. And every time, the same question came back to us. Why should looking beautiful mean feeling this uncomfortable? Why should the same climate that gave us some of the finest cotton and silk in the world also be the reason we struggle to wear them?
+          </p>
+
+          <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed text-sm md:text-base font-medium text-gold-600 dark:text-gold-400">
+            That question became Devii.
+          </p>
+
+          <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed text-sm md:text-base">
+            We started travelling to weavers across India, from small clusters to well-known weaving towns, looking for fabric that didn't just look good but felt good against the skin, in our heat, for hours at a stretch. Every saree we choose has to earn its place with us. It has to breathe. It has to move with the body instead of clinging to it. And it still has to shine, drape beautifully, and hold its own with the trends women love today.
+          </p>
+
+          <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed text-sm md:text-base">
+            Because comfort was never meant to be a compromise. A saree should carry you through a long day, a longer function, a family that won't stop taking photos, and still let you feel like yourself by the end of it.
+          </p>
+
+          <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed text-sm md:text-base">
+            This is why we say, <strong className="font-bold text-gold-600 dark:text-gold-400">wear your power</strong>. Real confidence starts with actually being comfortable in your own skin, and in what you're wearing over it.
+          </p>
+
+          <div className="h-px w-full bg-gold-950/10 dark:bg-gold-500/10 my-8" />
+
+          <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed text-sm md:text-base">
             In an era of high-speed synthetic textiles and throwaway fashion, Devii stands as a quiet sanctuary for slow, hand-crafted weaves. We specialize in Cotton and Handloom Sarees, celebrating the delicate imperfections that tell the story of the artisan's hands.
           </p>
 
-          <p className="text-zinc-400 font-light leading-relaxed text-sm md:text-base">
+          <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed text-sm md:text-base">
             Each saree takes anywhere from five days to three weeks to weave on traditional wooden pit looms. The thread is often handspun (Khadi) or dyed naturally using traditional block prints like Ajrakh. By showcase-selling these collections offline and through direct inquiry, we maintain an intimate connection with our patrons and weavers alike.
           </p>
 

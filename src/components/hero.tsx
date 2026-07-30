@@ -15,12 +15,12 @@ export default function Hero({ onScrollToCollections, onOpenContact }: HeroProps
       {/* Background Image Container with Ambient Zoom */}
       <div className="absolute inset-0 z-0 bg-[#07070a]">
         <Image
-          src="/images/hero_saree.jpg"
+          src="/images/hero_saree_v4.jpg"
           alt="Royal Indian Handloom Cotton Saree"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-40 scale-105 animate-[pulse_8s_infinite_alternate]"
+          className="object-cover object-[center_25%] opacity-40 scale-105 animate-[pulse_8s_infinite_alternate]"
           style={{
             animationDuration: "25s",
           }}
@@ -32,14 +32,11 @@ export default function Hero({ onScrollToCollections, onOpenContact }: HeroProps
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center mt-8">
-        <div className="inline-flex items-center space-x-2 border border-gold-600/30 px-4 py-1.5 rounded-full bg-gold-950/20 backdrop-blur-sm mb-6 animate-in fade-in slide-in-from-bottom-3 duration-1000">
-          <span className="h-1.5 w-1.5 rounded-full bg-gold-400 animate-ping" />
-          <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-gold-300">
-            Artisanal Handloom Heritage
-          </span>
-        </div>
+        <p className="font-cursive text-6xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-100 to-gold-400 mb-2 animate-in fade-in slide-in-from-bottom-3 duration-1000 delay-100 normal-case leading-none py-2">
+          Wear Your Power
+        </p>
 
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-[#f4f4f5] tracking-wide leading-none mb-6 animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-200">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-[#f4f4f5] tracking-wide leading-none mb-6 animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-200 pt-2">
           Handwoven Legacies of <br />
           <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-100 to-gold-400">
             Cotton & Thread
@@ -51,12 +48,14 @@ export default function Hero({ onScrollToCollections, onOpenContact }: HeroProps
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
-          <button
-            onClick={onScrollToCollections}
-            className="w-full sm:w-auto px-8 py-4 bg-transparent border border-gold-500 hover:bg-gold-500/10 text-gold-300 hover:text-gold-200 font-serif text-sm tracking-wider uppercase rounded-sm transition-all duration-300 cursor-pointer"
+          <a
+            href="https://www.instagram.com/devii.handloom"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-8 py-4 bg-transparent border border-gold-500 hover:bg-gold-500/10 text-gold-300 hover:text-gold-200 font-serif text-sm tracking-wider uppercase rounded-sm transition-all duration-300 cursor-pointer inline-block text-center"
           >
-            Explore Stock
-          </button>
+            Explore Saree
+          </a>
           <button
             onClick={onOpenContact}
             className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold-600 to-gold-400 text-[#07070a] hover:from-gold-500 hover:to-gold-300 font-serif font-bold text-sm tracking-wider uppercase rounded-sm transition-all duration-300 shadow-[0_4px_20px_rgba(212,175,55,0.2)] cursor-pointer"

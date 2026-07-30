@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter, Great_Vibes } from "next/font/google";
 import "./globals.css";
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -13,6 +13,12 @@ const cormorantGaramond = Cormorant_Garamond({
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
+});
+
+const greatVibes = Great_Vibes({
+  variable: "--font-cursive",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +40,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html
         lang="en"
-        className={`${cormorantGaramond.variable} ${inter.variable} h-full antialiased`}
+        className={`${cormorantGaramond.variable} ${inter.variable} ${greatVibes.variable} h-full antialiased`}
         suppressHydrationWarning
       >
         <head>

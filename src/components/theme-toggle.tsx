@@ -10,7 +10,6 @@ export default function ThemeToggle() {
     const savedTheme = (localStorage.getItem("theme") as "light" | "dark") || "dark";
     setTheme(savedTheme);
     
-    // Make sure HTML reflects current theme on mount
     if (savedTheme === "dark") {
       document.documentElement.classList.add("dark");
       document.documentElement.classList.remove("light");
@@ -38,13 +37,13 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 border border-gold-900/40 text-gold-400 hover:bg-gold-500/10 rounded-sm transition-all duration-300 flex items-center justify-center cursor-pointer"
+      className="p-2 border border-zinc-300 hover:border-gold-500 hover:bg-gold-500/10 text-zinc-700 hover:text-gold-600 rounded-sm transition-all duration-300 flex items-center justify-center cursor-pointer"
       title={theme === "dark" ? "Switch to Light Curation" : "Switch to Dark Curation"}
     >
       {theme === "dark" ? (
-        <Sun className="h-4 w-4" />
+        <Sun className="h-4.5 w-4.5" />
       ) : (
-        <Moon className="h-4 w-4" />
+        <Moon className="h-4.5 w-4.5" />
       )}
     </button>
   );

@@ -16,23 +16,49 @@
   --color-emerald-accent: #047857;
   --color-crimson-accent: #b91c1c;
 
+  /* Register dynamic theme variables to override Tailwind's built-in zinc and custom obsidian classes */
+  --color-zinc-50: var(--color-zinc-50);
+  --color-zinc-100: var(--color-zinc-100);
+  --color-zinc-200: var(--color-zinc-200);
+  --color-zinc-300: var(--color-zinc-300);
+  --color-zinc-400: var(--color-zinc-400);
+  --color-zinc-500: var(--color-zinc-500);
+  --color-zinc-600: var(--color-zinc-600);
+  --color-zinc-700: var(--color-zinc-700);
+  --color-zinc-800: var(--color-zinc-800);
+  --color-zinc-900: var(--color-zinc-900);
+  --color-zinc-950: var(--color-zinc-950);
+
+  --color-obsidian-50: var(--color-obsidian-50);
+  --color-obsidian-100: var(--color-obsidian-100);
+  --color-obsidian-200: var(--color-obsidian-200);
+  --color-obsidian-300: var(--color-obsidian-300);
+  --color-obsidian-400: var(--color-obsidian-400);
+  --color-obsidian-500: var(--color-obsidian-500);
+  --color-obsidian-600: var(--color-obsidian-600);
+  --color-obsidian-700: var(--color-obsidian-700);
+  --color-obsidian-800: var(--color-obsidian-800);
+  --color-obsidian-900: var(--color-obsidian-900);
+  --color-obsidian-950: var(--color-obsidian-950);
+
   --font-serif: var(--font-serif), Georgia, serif;
   --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-cursive: var(--font-cursive), cursive;
 }
 
 :root {
-  /* Obsidian represents a high-end luxury light warm cream/ivory scale in light mode */
+  /* Obsidian represents a high-end luxury light warm rose-pink/blush scale in light mode */
   --color-obsidian-50: #0a0a0f;
   --color-obsidian-100: #12121c;
   --color-obsidian-200: #252535;
   --color-obsidian-300: #3f3f54;
   --color-obsidian-400: #575775;
   --color-obsidian-500: #727294;
-  --color-obsidian-600: #dfd7cc; /* borders */
-  --color-obsidian-700: #ebdcc5; /* secondary borders */
-  --color-obsidian-800: #f4ebd9; /* elements */
-  --color-obsidian-900: #f7f1e5; /* card / section background */
-  --color-obsidian-950: #fbf8f2; /* main background */
+  --color-obsidian-600: #e2d2d5; /* rose borders */
+  --color-obsidian-700: #ebd8dc; /* secondary rose borders */
+  --color-obsidian-800: #f2e2e5; /* rose elements background */
+  --color-obsidian-900: #faf0f2; /* pink card / section background */
+  --color-obsidian-950: #fdf2f4; /* main pink background */
   
   /* Zinc represents the text readability hierarchy (dark charcoal/slate) in light mode */
   --color-zinc-50: #09090b;
@@ -42,12 +68,12 @@
   --color-zinc-400: #52525b; /* Secondary body */
   --color-zinc-500: #71717a; /* Muted captions */
   --color-zinc-600: #a1a1aa; /* Disabled / very muted */
-  --color-zinc-700: #e4e4e7; /* Divider lines */
-  --color-zinc-800: #f4f4f5;
-  --color-zinc-900: #fafafa;
+  --color-zinc-700: #e2d2d5; /* Divider lines (rose tinted) */
+  --color-zinc-800: #faf0f2;
+  --color-zinc-900: #fdf2f4;
   --color-zinc-950: #ffffff;
 
-  --background: #fbf8f2;
+  --background: #fdf2f4;
   --foreground: #18181b;
 }
 
@@ -146,4 +172,16 @@ body {
 /* Hide scrollbar on modal overlay when drawer is open */
 .no-scroll {
   overflow: hidden;
+}
+
+/* Force hand cursor on all clickable elements globally */
+a,
+button,
+select,
+input[type="button"],
+input[type="submit"],
+[role="button"],
+.cursor-pointer,
+.cursor-pointer * {
+  cursor: pointer !important;
 }
