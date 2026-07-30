@@ -45,7 +45,7 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
 
           {/* Desktop Center: Brand Logo Image (White background merges seamlessly, sized directly to fit container) */}
           <div
-            className="hidden md:flex flex-shrink-0 items-center justify-center cursor-pointer py-1"
+            className="hidden md:flex flex-shrink-0 items-center justify-center cursor-pointer py-1 bg-[#fdf2f4]"
             onClick={() => handleNavClick("hero")}
           >
             <Image
@@ -60,7 +60,7 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
 
           {/* Mobile Logo Container (Shown in center absolutely, sized directly to fit container) */}
           <div
-            className="md:hidden absolute left-1/2 -translate-x-1/2 flex-shrink-0 flex items-center cursor-pointer"
+            className="md:hidden absolute left-1/2 -translate-x-1/2 flex-shrink-0 flex items-center cursor-pointer bg-[#fdf2f4]"
             onClick={() => handleNavClick("hero")}
           >
             <Image
