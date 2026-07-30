@@ -32,7 +32,7 @@ export default function Hero({ onScrollToCollections, onOpenContact }: HeroProps
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center mt-8">
-        <p className="font-cursive text-6xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-100 to-gold-400 mb-2 animate-in fade-in slide-in-from-bottom-3 duration-1000 delay-100 normal-case leading-none py-2">
+        <p className="font-cursive text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-100 to-gold-400 mb-2 animate-in fade-in slide-in-from-bottom-3 duration-1000 delay-100 normal-case leading-none py-2">
           Wear Your Power
         </p>
 
