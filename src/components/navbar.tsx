@@ -114,17 +114,17 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#fdf2f4] border-b border-zinc-200 animate-in fade-in slide-in-from-top-5 duration-200">
+        <div className="md:hidden bg-[#fdf2f4] border-b border-[#e2d2d5] animate-in fade-in slide-in-from-top-5 duration-200">
           <div className="px-6 pt-4 pb-8 space-y-6 flex flex-col">
             <button
               onClick={() => handleNavClick("story")}
-              className="text-left text-zinc-100 hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-100 transition-colors cursor-pointer"
+              className="text-left text-[#18181b] hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-[#e2d2d5] transition-colors cursor-pointer"
             >
               Our Story
             </button>
             <button
               onClick={() => handleNavClick("instagram")}
-              className="text-left text-zinc-100 hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-100 transition-colors cursor-pointer"
+              className="text-left text-[#18181b] hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-[#e2d2d5] transition-colors cursor-pointer"
             >
               Artisanal Feed
             </button>
@@ -156,16 +156,16 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
             */}
 
             {/* Quick Contacts */}
-            <div className="flex items-center justify-around py-4 border-b border-zinc-100">
+            <div className="flex items-center justify-around py-4 border-b border-[#e2d2d5]">
               <a
                 href="mailto:contact@deviihandloom.in"
-                className="text-zinc-500 hover:text-gold-600 transition-colors"
+                className="text-[#52525b] hover:text-gold-600 transition-colors"
               >
                 <Mail className="h-5 w-5" />
               </a>
               <a
                 href="tel:+919380735763"
-                className="text-zinc-500 hover:text-gold-600 transition-colors"
+                className="text-[#52525b] hover:text-gold-600 transition-colors"
               >
                 <Phone className="h-5 w-5" />
               </a>
@@ -173,7 +173,7 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
                 href="https://www.instagram.com/devii.handloom"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-500 hover:text-gold-600 transition-colors"
+                className="text-[#52525b] hover:text-gold-600 transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
