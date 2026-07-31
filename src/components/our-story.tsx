@@ -19,7 +19,7 @@ export default function OurStory() {
     {
       icon: <Eye className="h-6 w-6 text-gold-500" />,
       title: "Radical Transparency",
-      desc: "We list the exact yarn counts (like 80s/100s combed threads), natural vegetable dyes, and weave history for every saree. Know exactly what you drape, where it came from, and who crafted it."
+      desc: "We list the exact yarn counts (like 100s/120s combed threads), natural vegetable dyes, and weave history for every saree. Know exactly what you drape, where it came from, and who crafted it."
     }
   ];
 

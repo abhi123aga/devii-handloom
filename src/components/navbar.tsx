@@ -27,6 +27,17 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
       <div className="w-full px-4 sm:px-6 relative">
         <div className="flex items-center justify-between h-30 md:h-40">
           
+          {/* Mobile Left: Menu Toggle Button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-zinc-700 hover:text-gold-600 focus:outline-none transition-colors cursor-pointer p-1"
+              aria-label="Toggle Menu"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+
           {/* Desktop Left: Navigation Links */}
           <div className="hidden md:flex items-center space-x-6 flex-1">
             <button
@@ -99,15 +110,17 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
             )}
           </div>
 
-          {/* Mobile right menu controls */}
-          <div className="md:hidden flex items-center gap-3">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-zinc-700 hover:text-gold-600 focus:outline-none transition-colors cursor-pointer"
-              aria-label="Toggle Menu"
+          {/* Mobile Right: Instagram Link (Pushed to the far right side of header layout) */}
+          <div className="md:hidden flex items-center">
+            <a
+              href="https://www.instagram.com/devii.handloom"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-700 hover:text-gold-600 transition-colors p-1"
+              aria-label="Instagram Link"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+              <Instagram className="h-5.5 w-5.5 text-zinc-700 hover:text-gold-600" />
+            </a>
           </div>
         </div>
       </div>
