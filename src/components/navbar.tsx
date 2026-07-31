@@ -116,11 +116,10 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
               href="https://www.instagram.com/devii.handloom"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 bg-gradient-to-tr from-[#fdf497] via-[#d62976] to-[#4f5bd5] hover:opacity-90 text-white text-[10px] font-serif font-bold tracking-widest uppercase rounded-sm flex items-center gap-1 transition-all duration-300 shadow-[0_2px_8px_rgba(214,41,118,0.2)] hover:shadow-[0_2px_12px_rgba(214,41,118,0.4)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="p-2 bg-gradient-to-tr from-[#fdf497] via-[#d62976] to-[#4f5bd5] hover:opacity-90 text-white rounded-sm flex items-center justify-center transition-all duration-300 shadow-[0_2px_8px_rgba(214,41,118,0.2)] hover:shadow-[0_2px_12px_rgba(214,41,118,0.4)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               aria-label="Instagram Link"
             >
-              <Instagram className="h-3.5 w-3.5 text-white" />
-              <span className="tracking-wide">Follow Us</span>
+              <Instagram className="h-4.5 w-4.5 text-white" />
             </a>
           </div>
         </div>
