@@ -186,46 +186,34 @@ input[type="submit"],
   cursor: pointer !important;
 }
 
-/* Mobile-only Pink Theme Override (Enforces a consistent, high-contrast pink layout across mobile viewports) */
+/* Mobile-only Pink Theme Override (Forces mobile viewports to render with a consistent light rose-pink background and highly legible dark text layout across all themes) */
 @media (max-width: 767px) {
-  html, body, #__next, main, section, footer, .bg-obsidian-950, .bg-obsidian-900 {
-    background-color: #fdf2f4 !important;
-    background-image: none !important;
-  }
-  
-  h1, h2, h3, h4, h5, h6, p, span, a, button, blockquote, label, div {
-    color: #18181b !important;
-  }
-  
-  /* Preserve highlight color styling maps */
-  .text-gold-400, .text-gold-500, .text-gold-600, .text-gold-700, .text-gold-300,
-  .bg-clip-text, .text-transparent {
-    color: transparent !important;
-    background-clip: text !important;
-    -webkit-background-clip: text !important;
-  }
-  
-  .font-cursive {
-    color: transparent !important;
-    background-image: linear-gradient(to right, #dcbe67, #f5edd0, #cca03c) !important;
-  }
-  
-  .bg-gradient-to-r.from-gold-700.to-gold-500,
-  .bg-gradient-to-r.from-gold-700.to-gold-500 * {
-    background-image: linear-gradient(to right, #714a1a, #b5892c) !important;
-    color: #ffffff !important;
-  }
-  
-  .bg-gradient-to-tr.from-\[\#fdf497\] {
-    background-image: linear-gradient(to top right, #fdf497, #d62976, #4f5bd5) !important;
-    color: #ffffff !important;
-  }
-  .bg-gradient-to-tr.from-\[\#fdf497\] * {
-    color: #ffffff !important;
-  }
-  
-  .border, .border-b, .border-t, .border-l, .border-r,
-  .border-zinc-200, .border-zinc-100, .border-zinc-700, .border-gold-950\/20, .border-gold-950\/40 {
-    border-color: #e2d2d5 !important;
+  :root, .dark {
+    /* Backgrounds: Force light rose-pink scale */
+    --background: #fdf2f4 !important;
+    --color-obsidian-50: #0a0a0f !important;
+    --color-obsidian-100: #1b1a23 !important;
+    --color-obsidian-200: #2c2936 !important;
+    --color-obsidian-300: #494557 !important;
+    --color-obsidian-400: #656178 !important;
+    --color-obsidian-500: #7c7891 !important;
+    --color-obsidian-600: #e2d2d5 !important; /* Soft rose border */
+    --color-obsidian-700: #f2e2e5 !important;
+    --color-obsidian-800: #f2e2e5 !important;
+    --color-obsidian-900: #faf0f2 !important; /* Blushing card background */
+    --color-obsidian-950: #fdf2f4 !important; /* Main page background */
+
+    /* Text: Force dark readable text scale */
+    --color-zinc-50: #09090b !important;
+    --color-zinc-100: #18181b !important; /* Headings */
+    --color-zinc-200: #27272a !important; /* Subheadings */
+    --color-zinc-300: #3f3f46 !important; /* Body text */
+    --color-zinc-400: #52525b !important; /* Secondary body */
+    --color-zinc-500: #71717a !important;
+    --color-zinc-600: #a1a1aa !important;
+    --color-zinc-700: #e2d2d5 !important;
+    --color-zinc-800: #faf0f2 !important;
+    --color-zinc-900: #fdf2f4 !important;
+    --color-zinc-950: #ffffff !important;
   }
 }

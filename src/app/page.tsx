@@ -81,7 +81,8 @@ export default function Home() {
     if (el) {
       const headerOffset = window.innerWidth >= 768 ? 160 : 120; // 150% expanded header heights
       const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 32; // additional padding gap for aesthetic breathing room
+      // Scroll further down so the section header aligns closely directly below the sticky header
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset + 16;
       
       window.scrollTo({
         top: offsetPosition,
