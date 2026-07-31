@@ -129,18 +129,17 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
               Artisanal Feed
             </button>
 
-            {/* Loom Vault commented out for now
             {isSignedIn ? (
               <>
                 <Link
                   href="/dashboard"
                   onClick={() => setIsOpen(false)}
-                  className="text-left text-zinc-800 hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-100 transition-colors cursor-pointer"
+                  className="text-left text-[#18181b] hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-[#e2d2d5] transition-colors cursor-pointer"
                 >
                   My Loom Vault
                 </Link>
-                <div className="flex items-center justify-between py-2 border-b border-zinc-100">
-                  <span className="text-xs text-zinc-400 uppercase tracking-wider">
+                <div className="flex items-center justify-between py-2 border-b border-[#e2d2d5]">
+                  <span className="text-xs text-[#52525b] uppercase tracking-wider font-medium">
                     Account Settings
                   </span>
                   <UserButton />
@@ -148,12 +147,11 @@ export default function Navbar({ onOpenContact, onScrollToSection }: NavbarProps
               </>
             ) : (
               <SignInButton mode="modal">
-                <button className="text-left text-zinc-800 hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-zinc-100 transition-colors cursor-pointer">
+                <button className="w-full text-left text-[#18181b] hover:text-gold-600 font-medium tracking-widest text-sm uppercase py-2 border-b border-[#e2d2d5] transition-colors cursor-pointer">
                   Sign In / Register
                 </button>
               </SignInButton>
             )}
-            */}
 
             {/* Quick Contacts */}
             <div className="flex items-center justify-around py-4 border-b border-[#e2d2d5]">
